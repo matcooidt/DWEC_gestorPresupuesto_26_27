@@ -17,11 +17,13 @@ function mostrarPresupuesto() {
     return `Tu presupuesto actual es de ${presupuesto} €`;
 }
 
-function CrearGasto(descripcion, valor) {
-    this.descripcion = descripcion;
+function CrearGasto(concepto, valor, fecha, ...etiquetas) {
+    this.concepto = concepto;
+    this.descripcion = concepto;
 
     if (typeof valor === "number" && !isNaN(valor) && valor >= 0) {
         this.valor = valor;
+        this.cantidad = valor;
     } else {
         this.valor = 0;
     }
